@@ -3,26 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Critical Path Method</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.cdnfonts.com/css/the-aesthetic-essential" rel="stylesheet">
-                
+    <title>Task Critical Path</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="wrapper" onmouseenter="sound1.play()">Critical Path Method</div>
-        <div id="taskForm">
-            <label for="taskCount">Enter the number of tasks:</label>
-            <input type="number" id="taskCount" min="1">
-            <button onclick="createTaskInputs()">Create Tasks</button>
+        <h1>Task Critical Path</h1>
+        <form id="taskForm">
+            <label for="taskCount">Enter the number of tasks :</label>
+            <input type="number" id="taskCount" name="taskCount" min="1" required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="taskDetails" class="hidden">
+            <!-- Task details will be displayed here -->
         </div>
-        <div id="taskInputs"></div>
-        <div id="results"></div>
     </div>
-    <script src="JS.js"></script>
-<script>
-    var sound1 = new Audio();
-    sound1.src = "hover-sound.mp3";
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
