@@ -32,13 +32,12 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 50px;
-    padding-left: 35%;
-    padding-right: 35%;
 }
 
 .wrapper {
     width: 349px;
     height: 117px;
+    font: small-caps bold 24px/1 sans-serif;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -60,26 +59,34 @@ h1 {
 label {
     display: block;
     margin-top: 20px;
+    font: small-caps bold 18px/1 sans-serif;
 }
 
 input[type="number"], input[type="text"] {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
+    border-radius: 5px;
 }
 
 button {
     margin-top: 20px;
-    font-family: 'The Aesthetic Essential', sans-serif;
+    font-family: 'basic-sans', sans-serif;
+    font: italic 0.9rem "Fira Sans", sans-serif;
     padding: 10px 20px;
-    background-color: #007bff;
     color: white;
-    border: none;
+    border: 0;
     cursor: pointer;
+    padding: .5em 1.25em;
+    background: linear-gradient(90deg, #ee6352, purple, #ee6352);
+    background-size: 300%;
+    background-position: left;
+    transition: background-position 350ms;
+    border-radius: 5px;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-position: right;
 }
 
 #results {
@@ -88,17 +95,19 @@ button:hover {
 
 table {
     width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-collapse: collapse;
     margin-top: 20px;
+    border-radius: 5px;
 }
 
 th, td {
-    border: 10px solid #ddd;
+    border: 2px solid #ddd;
     padding: 8px;
     text-align: left;
 }
 
 th {
-    background-color: #007bff;
-    color: white;
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
 }
