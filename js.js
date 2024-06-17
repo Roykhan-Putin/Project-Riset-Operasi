@@ -27,17 +27,17 @@ function createTaskInputs() {
 
         taskDiv.innerHTML = `
             <h2>Task ${i + 1}</h2>
-            <label for="taskName${i}">Enter name for task ${i + 1}:</label>
+            <label for="taskName${i}">Enter name for task ${i + 1} :</label>
             <input type="text" id="taskName${i}">
-            <label for="taskDuration${i}">Enter duration for task ${i + 1}:</label>
+            <label for="taskDuration${i}">Enter duration for task ${i + 1} :</label>
             <input type="number" id="taskDuration${i}" min="0">
-            <label for="taskCost${i}">Enter cost for task ${i + 1}:</label>
+            <label for="taskCost${i}">Enter cost for task ${i + 1} :</label>
             <input type="number" id="taskCost${i}" min="0">
-            <label for="taskCrashDuration${i}">Enter crash duration for task ${i + 1}:</label>
+            <label for="taskCrashDuration${i}">Enter crash duration for task ${i + 1} :</label>
             <input type="number" id="taskCrashDuration${i}" min="0">
-            <label for="taskCrashCost${i}">Enter crash cost for task ${i + 1}:</label>
+            <label for="taskCrashCost${i}">Enter crash cost for task ${i + 1} :</label>
             <input type="number" id="taskCrashCost${i}" min="0">
-            <label for="taskDependencies${i}">Enter number of dependencies for task ${i + 1}:</label>
+            <label for="taskDependencies${i}">Enter number of dependencies for task ${i + 1} :</label>
             <input type="number" id="taskDependencies${i}" min="0" oninput="createDependencyInputs(${i})">
             <div id="dependencyInputs${i}"></div>
         `;
@@ -214,11 +214,11 @@ function displayResults(tasks, taskCount, earliestStart, earliestFinish, latestS
         }
     }
 
-    results.innerHTML += `<h3>Critical Path: ${criticalPath}</h3>`;
-    results.innerHTML += `<p>Project Duration: ${projectDuration} units</p>`;
+    results.innerHTML += `<h3>Critical Path : ${criticalPath}</h3>`;
+    results.innerHTML += `<p>Project Duration : ${projectDuration} units</p>`;
 
     let totalCost = tasks.reduce((acc, task) => acc + task.cost, 0);
-    results.innerHTML += `<p>Total Cost: $${totalCost}</p>`;
+    results.innerHTML += `<p>Total Cost : $${totalCost}</p>`;
 
     performCrashingAnalysis(tasks, taskCount);
 }
@@ -308,9 +308,9 @@ function performCrashingAnalysis(tasks, taskCount) {
         }
     }
 
-    results.innerHTML += `<h3>Crashing Critical Path: ${criticalPath}</h3>`;
-    results.innerHTML += `<p>Crashing Project Duration: ${projectDuration.toFixed(1)} units</p>`;
+    results.innerHTML += `<h3>Crashing Critical Path : ${criticalPath}</h3>`;
+    results.innerHTML += `<p>Crashing Project Duration : ${projectDuration.toFixed(1)} units</p>`;
 
     let totalCrashCost = tasks.reduce((acc, task) => acc + task.crashCost, 0);
-    results.innerHTML += `<p>Total Crashing Cost: $${totalCrashCost.toFixed(1)}</p>`;
+    results.innerHTML += `<p>Total Crashing Cost : $${totalCrashCost.toFixed(1)}</p>`;
 }
