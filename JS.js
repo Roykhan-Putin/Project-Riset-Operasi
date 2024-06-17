@@ -277,7 +277,16 @@ function performCrashingAnalysis(tasks, taskCount) {
 
     for (let i = 0; i < taskCount; i++) {
         const row = document.createElement('tr');
-        const values = [i, tasks[i].name, tasks[i].crashDuration, earliestStart[i], earliestFinish[i], latestStart[i], latestFinish[i], tasks[i].crashCost];
+        const values = [
+            i,
+            tasks[i].name,
+            tasks[i].crashDuration,
+            earliestStart[i].toFixed(1),
+            earliestFinish[i].toFixed(1),
+            latestStart[i].toFixed(1),
+            latestFinish[i].toFixed(1),
+            tasks[i].crashCost
+        ];
         values.forEach(value => {
             const td = document.createElement('td');
             td.textContent = value;
@@ -300,8 +309,8 @@ function performCrashingAnalysis(tasks, taskCount) {
     }
 
     results.innerHTML += `<h3>Crashing Critical Path: ${criticalPath}</h3>`;
-    results.innerHTML += `<p>Crashing Project Duration: ${projectDuration} units</p>`;
+    results.innerHTML += `<p>Crashing Project Duration: ${projectDuration.toFixed(1)} units</p>`;
 
     let totalCrashCost = tasks.reduce((acc, task) => acc + task.crashCost, 0);
-    results.innerHTML += `<p>Total Crashing Cost: $${totalCrashCost}</p>`;
+    results.innerHTML += `<p>Total Crashing Cost: $${totalCrashCost.toFixed(1)}</p>`;
 }
