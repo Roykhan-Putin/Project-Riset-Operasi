@@ -179,6 +179,7 @@ th {
     text-align: center;
     line-height: 50px;
     transform: translateX(-50%);
+    cursor: pointer;
 }
 
 .sidebar.active #btn {
