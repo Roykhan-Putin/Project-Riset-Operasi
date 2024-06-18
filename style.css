@@ -134,12 +134,13 @@ th {
     left: 0;
     height: 100%;
     width: 30px;
-    background: #11101d;
+    background: none;
     padding: 6px 14px;
     transition: all 0.5s ease;
 }
 
 .sidebar.active {
+    background: #11101d;
     width: 360px;
 }
 
