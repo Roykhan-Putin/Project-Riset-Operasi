@@ -6,9 +6,49 @@
     <title>Critical Path Method</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.cdnfonts.com/css/the-aesthetic-essential" rel="stylesheet">
-                
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <div class="sidebar">
+        <div class="logo-content">
+            <div class="logo">
+                <div class="logo-name">Our Group Members</div>
+            </div>
+            <i class='bx bx-menu-alt-left' style='color:#ffffff' id="btn"  ></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="links-name">Rizal Mattovani</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="links-name">Ayaturohma Sadidan</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="links-name">Mohammad Valeriant</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="links-name">Rivaldy Arrayan Yuwono</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="links-name">Achmad Roykhan Sabiq</span>
+                </a>
+            </li>
+        </ul>
+    </div>
     <div class="container">
         <div class="wrapper" onmouseenter="sound1.play()">Critical Path Method</div>
         <div id="taskForm">
@@ -23,6 +63,12 @@
 <script>
     var sound1 = new Audio();
     sound1.src = "hover-sound.mp3";
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+
+    btn.onclick = function () {
+        sidebar.classList.toggle("active");
+    }
 </script>
 </body>
 </html>
